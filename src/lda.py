@@ -20,7 +20,7 @@ from xgboost import cv as xgb_cv
 def load_and_check_data(
     data_dir: str, data_file: str, round_no: int = 3
 ) -> DataFrame:
-    df = pd.read_csv(data_dir + data_file, index_col=[0, 1, 2, 3])
+    df = pd.read_csv(data_dir + data_file, index_col=0)
 
     # 1. Check for NA values and replace them with column mean
     df.fillna(df.mean(), inplace=True)
